@@ -28,5 +28,6 @@ from .nag_conif import NAG
 from .pdlp_conif import PDLP
 from .scip_conif import SCIP
 from .scipy_conif import SCIPY
+from .phold_conif import PHOLD
 from .scs_conif import SCS
 from .xpress_conif import XPRESS

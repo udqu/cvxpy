@@ -46,11 +46,12 @@ from cvxpy.reductions.solvers.conic_solvers.xpress_conif import (
     XPRESS as XPRESS_con,)
 from cvxpy.reductions.solvers.qp_solvers.cplex_qpif import CPLEX as CPLEX_qp
 from cvxpy.reductions.solvers.qp_solvers.gurobi_qpif import GUROBI as GUROBI_qp
+from cvxpy.reductions.solvers.conic_solvers.phold_conif import PHOLD as PHOLD_con
 # QP interfaces
 from cvxpy.reductions.solvers.qp_solvers.osqp_qpif import OSQP as OSQP_qp
 from cvxpy.reductions.solvers.qp_solvers.xpress_qpif import XPRESS as XPRESS_qp
 
-solver_conic_intf = [DIFFCP_con(), ECOS_con(),
+solver_conic_intf = [DIFFCP_con(), ECOS_con(), PHOLD_con(),
                      CVXOPT_con(), GLPK_con(),
                      GLPK_MI_con(), CBC_con(), SCS_con(),
                      GUROBI_con(), MOSEK_con(), CPLEX_con(), NAG_con(), XPRESS_con(),
@@ -71,7 +72,7 @@ SOLVER_MAP_QP = {solver.name(): solver for solver in solver_qp_intf}
 CONIC_SOLVERS = [s.MOSEK, s.ECOS, s.SCS,
                  s.CPLEX, s.GUROBI, s.GLPK, s.NAG,
                  s.GLPK_MI, s.CBC, s.CVXOPT, s.XPRESS, s.DIFFCP,
-                 s.SCIP, s.SCIPY, s.GLOP, s.PDLP, s.ECOS_BB]
+                 s.SCIP, s.SCIPY, s.GLOP, s.PDLP, s.ECOS_BB, s.PHOLD]
 QP_SOLVERS = [s.OSQP,
               s.GUROBI,
               s.CPLEX,
